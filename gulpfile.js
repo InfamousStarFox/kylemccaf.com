@@ -61,7 +61,22 @@ gulp.task('default', gulp.series(
   'vendor_css'
 ));
 
-gulp.task('deploy', function () {
-  return gulp.src("./_site/**/*")
-    .pipe(deploy());
+gulp.task('deploy_code', function () {
+  return gulp.src("./**/*")
+    .pipe(deploy({
+      branch: "master"
+    }));
 });
+
+gulp.task('deploy_site', function () {
+  return gulp.src("./_site/**/*")
+    .pipe(deploy({
+      branch: "site"
+    }));
+});
+
+gulp.task('deploy', gulp.series(
+  'clean',
+  'deploy_code',
+  'deploy_site'
+));
