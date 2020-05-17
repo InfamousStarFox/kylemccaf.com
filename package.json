@@ -5,13 +5,17 @@
   "license": "UNLICENSED",
   "private": true,
   "scripts": {
-    "build": "gulp && bundle exec jekyll build",
-    "start": "gulp && bundle exec jekyll serve",
-    "clean": "gulp clean",
+    "prebuild": "npm run cp_js & npm run cp_fonts & npm run cp_css",
+    "build": "npm run prebuild && bundle exec jekyll build",
+    "start": "npm run prebuild && bundle exec jekyll serve",
+    "clean": "find assets/js -type f -not -name 'main.js' -delete && find assets/fonts -type f -delete && find assets/css -type f -not -name 'styles.scss' -delete",
+    "nuke": "git checkout . && git reset --hard",
     "deploy_code": "git checkout master && git pull && git add * && git commit -m \"Auto deploy\" && git push",
     "deploy_site": "git checkout gh-pages && git pull && cp -r _site/* . && git add * && git commit -m \"Auto deploy\" && git push && git checkout master",
-    "nuke": "git checkout . && git reset --hard",
-    "deploy": "npm run build && npm run clean && npm run deploy_code && npm run deploy_site"
+    "deploy": "npm run build && npm run clean && npm run deploy_code && npm run deploy_site",
+    "cp_js": "cp 'node_modules/bootstrap/dist/js/bootstrap.min.js' 'assets/js' & cp 'node_modules/jquery/dist/jquery.min.js' 'assets/js' & cp 'node_modules/perfect-scrollbar/dist/js/perfect-scrollbar.jquery.min.js' 'assets/js'",
+    "cp_fonts": "cp 'node_modules/font-awesome/fonts/fontawesome-webfont.woff' 'assets/fonts' & cp 'node_modules/font-awesome/fonts/fontawesome-webfont.woff2' 'assets/fonts' & cp 'node_modules/font-awesome/fonts/fontawesome-webfont.ttf' 'assets/fonts'",
+    "cp_css": "cp 'node_modules/bootstrap/dist/css/bootstrap.min.css' 'assets/css' & cp 'node_modules/bootstrap/dist/css/bootstrap.min.css.map' 'assets/css' & cp 'node_modules/perfect-scrollbar/dist/css/perfect-scrollbar.min.css' 'assets/css' & cp 'node_modules/font-awesome/css/font-awesome.min.css' 'assets/css'"
   },
   "dependencies": {
     "bootstrap": "^4.5.0",
@@ -20,10 +24,5 @@
     "perfect-scrollbar": "^0.8.1"
   },
   "devDependencies": {
-    "del": "^5.1.0",
-    "gulp": "^4.0.2",
-    "gulp-concat": "^2.6.1",
-    "gulp-gh-pages-will": "^0.5.5",
-    "gulp-uglify": "^3.0.2"
   }
 }
