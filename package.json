@@ -8,8 +8,8 @@
     "build": "gulp && bundle exec jekyll build",
     "start": "gulp && bundle exec jekyll serve",
     "clean": "gulp clean",
-    "deploy_code": "git checkout master && git add * && git commit -m \"Auto deploy\" && git push",
-    "deploy_site": "git checkout master && git add _site/* && git commit -m \"Auto deploy\" && git push",
+    "deploy_code": "git checkout master && git pull && git add * && git commit -m \"Auto deploy\" && git push",
+    "deploy_site": "git checkout master && git pull && git add _site/* && git commit -m \"Auto deploy\" && git push",
     "deploy_site2": "gh-pages -b 'gh-pages' -d _site -m \"Updated $(date)\"",
     "nuke": "git checkout . && git reset --hard && git reset HEAD~",
     "deploy": "npm run build && npm run deploy_code && npm run deploy_site"
