@@ -9,9 +9,8 @@
     "start": "gulp && bundle exec jekyll serve",
     "clean": "gulp clean",
     "deploy_code": "git checkout master && git pull && git add * && git commit -m \"Auto deploy\" && git push",
-    "deploy_site": "git checkout master && git pull && git add _site/* && git commit -m \"Auto deploy\" && git push",
-    "deploy_site2": "gh-pages -b 'gh-pages' -d _site -m \"Updated $(date)\"",
-    "nuke": "git checkout . && git reset --hard && git reset HEAD~",
+    "deploy_site": "git checkout gh-pages && git pull && rm -r * && git checkout master -- _site && mv _site/* . && rm -r _site && git add * && git commit -m \"Auto deploy\" && git push && git checkout master",
+    "nuke": "git checkout . && git reset --hard",
     "deploy": "npm run build && npm run deploy_code && npm run deploy_site"
   },
   "dependencies": {
