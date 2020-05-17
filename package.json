@@ -8,7 +8,7 @@
     "build": "gulp && bundle exec jekyll build",
     "start": "gulp && bundle exec jekyll serve",
     "clean": "gulp clean",
-    "deploy_code": "gh-pages -b 'master' -d '.' -t -m 'NPM Auto-deploy'",
+    "deploy_code": "git checkout master && git add * && git commit -m \"Updated $(date)\"",
     "deploy_site": "gh-pages -b 'gh-pages' -d _site -m \"Updated $(date)\"",
     "deploy": "npm run build && npm run deploy_code && npm run deploy_site"
   },
@@ -20,7 +20,6 @@
   },
   "devDependencies": {
     "del": "^5.1.0",
-    "gh-pages": "^2.2.0",
     "gulp": "^4.0.2",
     "gulp-concat": "^2.6.1",
     "gulp-gh-pages-will": "^0.5.5",
