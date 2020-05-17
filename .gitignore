@@ -1,9 +1,0 @@
-.gitignore
-_site/
-.sass-cache/
-.jekyll-cache/
-.jekyll-metadata
-node_modules/
-Gemfile.lock
-package-lock.json
-.publish
