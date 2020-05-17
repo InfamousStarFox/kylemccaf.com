@@ -2,5 +2,6 @@ _site/
 .sass-cache/
 .jekyll-cache/
 .jekyll-metadata
+.publish/
 node_modules/
 package-lock.json
