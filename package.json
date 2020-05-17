@@ -6,7 +6,7 @@
     "build": "gulp && bundle exec jekyll build",
     "start": "gulp && bundle exec jekyll serve",
     "clean": "gulp clean",
-    "deploy": "gulp deploy"
+    "deploy": "gulp && bundle exec jekyll build && gulp deploy"
   },
   "dependencies": {
     "bootstrap": "^4.5.0",
