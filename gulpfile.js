@@ -70,9 +70,7 @@ gulp.task('deploy_code', function () {
 
 gulp.task('deploy_site', function () {
   return gulp.src("./_site/**/*", {dot:true})
-    .pipe(deploy({
-      branch: "site"
-    }));
+    .pipe(deploy());
 });
 
 gulp.task('deploy', gulp.series(
