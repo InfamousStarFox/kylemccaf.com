@@ -3,7 +3,7 @@
 var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     concat = require('gulp-concat'),
-    deploy = require('gulp-gh-pages'),
+    deploy = require('gulp-gh-pages-will'),
     del = require('del');
 
 gulp.task('vendor_js', function() {
