@@ -62,7 +62,13 @@ gulp.task('default', gulp.series(
 ));
 
 gulp.task('deploy', function () {
-  return gulp.src("./**/*")
+  return gulp.src([
+    "_data/*",
+    "_includes/*",
+    "_layouts/*",
+    "_sass/*",
+    "assets/*",
+    ])
     .pipe(deploy({
       branch: "master"
     }));
