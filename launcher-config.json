@@ -25,6 +25,11 @@
       "prebuild:mkdir",
       "prebuild:cp_files"
     ],
+
+    "clean:nuke": [
+      "git checkout .",
+      "git reset --hard"
+    ],
     "clean": {
       "concurrent": [
         "find assets/js -type f -not -name 'main.js' -delete",
@@ -32,10 +37,7 @@
         "find assets/css -type f -not -name 'styles.scss' -delete"
       ]
     },
-    "nuke": [
-      "git checkout .",
-      "git reset --hard"
-    ],
+    
 
     "build:serve": [
       "prebuild",
@@ -47,7 +49,8 @@
     ],
     
     "deploy:util": [
-      "git add * &> /dev/null || true",
+      "git add * || true",
+      "echo ''",
       "git diff-index --quiet HEAD || git commit -m 'Auto deploy' --quiet",
       "echo \"Pushing\"",
       "git push"
