@@ -5,18 +5,7 @@
   "license": "UNLICENSED",
   "private": true,
   "scripts": {
-    "prebuild": "npm run cp_dir && npm run cp_js & npm run cp_fonts & npm run cp_css",
-    "build": "npm run prebuild && bundle exec jekyll build",
-    "start": "npm run prebuild && bundle exec jekyll serve",
-    "clean": "find assets/js -type f -not -name 'main.js' -delete && find assets/fonts -type f -delete && find assets/css -type f -not -name 'styles.scss' -delete",
-    "nuke": "git checkout . && git reset --hard",
-    "deploy_code": "git checkout master && git pull && git add * && git commit -m \"Auto deploy\" && git push",
-    "deploy_site": "git checkout gh-pages && git pull && cp -r _site/* . && git add * && git commit -m \"Auto deploy\" && git push && git checkout master",
-    "deploy": "npm run build && npm run clean && npm run deploy_code && npm run deploy_site",
-    "cp_dir": "mkdirp assets/js & mkdirp assets/fonts & mkdirp assets/css",
-    "cp_js": "cp 'node_modules/bootstrap/dist/js/bootstrap.min.js' 'assets/js' & cp 'node_modules/jquery/dist/jquery.min.js' 'assets/js' & cp 'node_modules/perfect-scrollbar/dist/js/perfect-scrollbar.jquery.min.js' 'assets/js'",
-    "cp_fonts": "cp 'node_modules/font-awesome/fonts/fontawesome-webfont.woff' 'assets/fonts' & cp 'node_modules/font-awesome/fonts/fontawesome-webfont.woff2' 'assets/fonts' & cp 'node_modules/font-awesome/fonts/fontawesome-webfont.ttf' 'assets/fonts'",
-    "cp_css": "cp 'node_modules/bootstrap/dist/css/bootstrap.min.css' 'assets/css' & cp 'node_modules/bootstrap/dist/css/bootstrap.min.css.map' 'assets/css' & cp 'node_modules/perfect-scrollbar/dist/css/perfect-scrollbar.min.css' 'assets/css' & cp 'node_modules/font-awesome/css/font-awesome.min.css' 'assets/css'"
+    "start": "launch"
   },
   "dependencies": {
     "bootstrap": "^4.5.0",
@@ -25,5 +14,6 @@
     "perfect-scrollbar": "^0.8.1"
   },
   "devDependencies": {
+    "script-launcher": "^1.29.0"
   }
 }
