@@ -50,13 +50,12 @@
     
     "deploy:util": [
       "",
-      "echo 'Adding Files'",
+      "echo '---Adding Files---'",
       "git add * || true",
       "git diff-index --quiet HEAD || git commit -m 'Auto deploy' --quiet",
       "",
-      "echo 'Publishing'",
-      "git push",
-      ""
+      "echo '---Publishing---'",
+      "git push"
 
     ],
     "deploy:code": [
