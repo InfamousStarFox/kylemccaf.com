@@ -47,13 +47,9 @@
     ],
     
     "deploy:util": [
-      "echo start1",
       "git add * || true",
-      "echo start2",
       "git diff-index --quiet HEAD || git commit -m 'Auto deploy'",
-      "echo start3",
-      "git push",
-      "echo start4"
+      "git push"
 
     ],
     "deploy:code": [
