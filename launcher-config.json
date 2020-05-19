@@ -50,7 +50,7 @@
     
     "deploy:util": [
       "git add * || true",
-      "printf '\\n'",
+      "echo '\\n'",
       "git diff-index --quiet HEAD || git commit -m 'Auto deploy' --quiet",
       "echo \"Pushing\"",
       "git push"
