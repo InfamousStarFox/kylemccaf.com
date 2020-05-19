@@ -62,6 +62,8 @@
       "echo '-------------------'",
       "echo '    Deploy Code    '",
       "echo '-------------------'",
+      "",
+      "echo '---Pulling Changes---'",
       "git checkout master --quiet",
       "git pull",
       "deploy:util"
@@ -70,6 +72,8 @@
       "echo '-------------------'",
       "echo '    Deploy Site    '",
       "echo '-------------------'",
+      "",
+      "echo '---Pulling Changes---'",
       "git checkout gh-pages --quiet",
       "git pull",
       "cp -r _site/* .",
