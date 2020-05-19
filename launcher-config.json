@@ -52,7 +52,6 @@
       "git commit -m \"Auto deploy\"",
       "git push",
       "fi"
-
     ],
     "deploy:code": [
       "git checkout master",
