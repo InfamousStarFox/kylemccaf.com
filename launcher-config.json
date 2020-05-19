@@ -59,20 +59,18 @@
 
     ],
     "deploy:code": [
-      "echo '-----------'",
-      "echo 'Deploy Code'",
-      "echo '-----------'",
+      "echo '-------------------'",
+      "echo '    Deploy Code    '",
+      "echo '-------------------'",
       "git checkout master --quiet",
-      "echo '---Pulling Changes---'",
       "git pull",
       "deploy:util"
     ],
     "deploy:site": [
-      "echo '-----------'",
-      "echo 'Deploy Site'",
-      "echo '-----------'",
+      "echo '-------------------'",
+      "echo '    Deploy Site    '",
+      "echo '-------------------'",
       "git checkout gh-pages --quiet",
-      "echo '---Pulling Changes---'",
       "git pull",
       "cp -r _site/* .",
       "deploy:util",
