@@ -59,7 +59,7 @@
 
     ],
     "deploy:code": [
-      "echo -e \"Normal \\e[1mBold\"",
+      "echo \"Deploy \\e[36mCyan\\e[39m\"",
       "git checkout master --quiet",
       "git pull",
       "deploy:util"
