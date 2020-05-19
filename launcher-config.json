@@ -53,12 +53,12 @@
 
     ],
     "deploy:code": [
-      "git checkout master",
+      "git checkout master --quiet",
       "git pull",
       "deploy:util"
     ],
     "deploy:site": [
-      "git checkout gh-pages",
+      "git checkout gh-pages --quiet",
       "git pull",
       "cp -r _site/* .",
       "deploy:util",
