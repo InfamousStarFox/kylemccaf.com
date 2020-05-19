@@ -79,7 +79,9 @@
     "deploy": [
       "build",
       "clean",
+      "",
       "deploy:code",
+      "",
       "deploy:site"
     ]
   }
