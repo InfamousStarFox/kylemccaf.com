@@ -46,7 +46,9 @@
       "bundle exec jekyll build"
     ],
     
-    
+    "deploy:util": [
+      "git pull",
+    ],
     "deploy:code": [
       "git checkout master",
       "git pull",
@@ -58,9 +60,7 @@
       "git checkout gh-pages",
       "git pull",
       "cp -r _site/* .",
-      "git add *",
-      "git commit -m \"Auto deploy\"",
-      "git push",
+      "if ! git diff-index --quiet HEAD --; then git add * && git commit -m \"Auto deploy\" && git push; fi;",
       "git checkout master"
     ],
     "deploy": [
