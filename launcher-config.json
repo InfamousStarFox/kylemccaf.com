@@ -37,8 +37,7 @@
         "find assets/css -type f -not -name 'styles.scss' -delete"
       ]
     },
-    
-
+	
     "build:serve": [
       "prebuild",
       "bundle exec jekyll serve"
@@ -47,7 +46,7 @@
       "prebuild",
       "bundle exec jekyll build"
     ],
-    
+	
     "deploy:util": [
       "",
       "echo '---Adding Files---'",

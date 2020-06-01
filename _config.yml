@@ -38,6 +38,7 @@ sass:
     - _sass
     - .htaccess
     - node_modules
+  style: compressed
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -50,3 +51,5 @@ exclude:
   - gulpfile.js
   - package.json
   - package-lock.json
+  - launcher-config.json
+  - launcher-menu.json
