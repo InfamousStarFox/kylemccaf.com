@@ -11,11 +11,7 @@ Open Git Bash and run:
 * `gem install jekyll bundler`
 * `bundle install`
 * `npm install`
-* `npm i -g mkdirp`
-* `npm i -g npx`
 * `npx launch`
-
-`bundle exec jekyll serve`
 
 ## Run
 * `npm start`
