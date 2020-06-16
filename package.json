@@ -14,6 +14,7 @@
     "perfect-scrollbar": "^0.8.1"
   },
   "devDependencies": {
+    "mkdirp": "^1.0.4",
     "script-launcher": "^1.29.0"
   }
 }
