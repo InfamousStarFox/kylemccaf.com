@@ -54,3 +54,6 @@ exclude:
   - launcher-config.json
   - launcher-menu.json
   - README.md
+
+# Keep the following files in the _site folder
+keep_files: [".git", "CNAME"]
