@@ -11,6 +11,7 @@ To get started, you will need
 Open a terminal and run:
 * `git clone https://github.com/InfamousStarFox/kylemccaf.com.git`
 * `cd kylemccaf.com`
+* `git worktree add _site gh-pages`
 * `bundle install`
 * `npm install`
 
