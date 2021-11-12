@@ -1,0 +1,298 @@
+/* ==========================================================
+! Body
+========================================================== */
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: left;
+    color: #212529;
+    line-height: 1.5;
+    -webkit-font-smoothing: subpixel-antialiased;
+    background: linear-gradient(-45deg, #2c160b, #241f1b, #31160b);
+    background-attachment: fixed;
+    background: url('../../images/bg1.jpg') no-repeat center center fixed #f2f2f2;
+    background-size: cover;
+  }
+  *, ::after, ::before {
+    box-sizing: border-box;
+  }
+  p {
+    margin-bottom: .5rem;
+  }
+  p, h1, h2, h3, h4 {
+    margin: 0px;
+  }
+  li {
+      list-style: none;
+  }
+  a {
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .container {
+    @media (min-width:576px) {
+      max-width: 450px;
+    }
+    @media (min-width:768px) {
+      max-width: 720px;
+    }
+    @media (min-width:992px) {
+      min-height: 600px;
+      max-width: 1140px;
+    }
+    width: 100%;
+    position: relative;
+    padding-bottom: 80px;
+    margin: 15px auto;
+    transition: all 0.3s ease-in-out;
+  }
+  .center {
+    text-align: center;
+  }
+  .btn {
+      display: inline-block;
+      color: #fff;
+      background-color: #343a40;
+      padding: .375rem .75rem;
+      font-size: 1rem;
+      line-height: 1.5;
+      border-radius: .25rem;
+      transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+      text-decoration: none;
+      margin-bottom: 8px;
+      &:hover {
+        background-color: #23272b;
+        border-color: #1d2124;
+        cursor: pointer;
+      }
+  }
+
+  .btn-block {
+    display: block;
+    width: 100%;
+  }
+
+
+  .section-vcardbody {
+    width: 100%;
+    margin: 0 auto;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+    &::-webkit-scrollbar {
+      width: 12px;
+    }
+    &::-webkit-scrollbar-track {
+      background-color: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+      border-radius: 12px;
+      border: 3px solid transparent;
+      background-clip: content-box;
+    }
+    &:hover {
+      scrollbar-color: #aaa transparent;
+      &::-webkit-scrollbar-thumb {
+        background-color: #aaa;
+      }
+    }
+
+    background: url('../../images/bg-card2.png') repeat-x right top #f4f4f4;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-top: 6px solid #111;
+    transition: all 0.6s ease-in-out;
+    border-radius: 0px;
+    box-shadow: 0px 6px 18px 0px rgba(0, 0, 0, 0.46);
+    border-bottom: 15px solid #f4f4f4;
+    @media (min-width:992px) {
+      position: absolute;
+      margin-top: 30px;
+      left: 30%;
+      height: 575px;
+      width: 40%;
+      padding: 45px;
+      padding-bottom: 20px;
+    }
+  }
+  
+  .section-vcardbody-pgactive {
+    left: 15%;
+  }
+  @media (min-width:992px) {
+    .section-page {
+      z-index: 11;
+      opacity: 0;
+    }
+  }
+  .section-page-active {
+    opacity: 1;
+    z-index: 22;
+    left: 55%;
+    visibility: visible;
+    transform: translateY(0px);
+    @media (min-width:992px) {
+      margin-left: 10px;
+    }
+  
+  }
+  .section-vcardbody,
+  .section-page-active,
+  .main-menu {
+    @media (min-width: 992px) {
+      margin-top: 10px;
+      @media (min-height: 650px) {
+        margin-top: 30px;
+      }
+      @media (min-height: 750px) {
+        margin-top: 60px;
+      }
+      @media (min-height: 992px) {
+        margin-top: 90px;
+      }
+      @media (min-height: 1400px) {
+        margin-top: 180px;
+      }  
+    }
+  }
+
+  /* ==========================================================
+  ! Main Menu
+  ========================================================== */
+  .main-menu {
+    width: 15%;
+    position: absolute;
+    top: 0;
+    left: 15%;
+    padding-top: 6px;
+    padding-right: 10px;
+    -webkit-transition: all 0.6s ease-in-out;
+    -moz-transition: all 0.6s ease-in-out;
+    transition: all 0.6s ease-in-out;
+    display: none;
+    @media (min-width:992px) {
+      display: block;
+    }
+  }
+  .main-menu-pgactive {
+    left: 0%;
+  }
+  .main-menu-list {
+    margin: 0;
+    padding: 0;
+    li {
+      padding: 0;
+      margin: 0;
+      margin-bottom: 5px;
+      list-style: none;
+    }
+    a {
+      display: block;
+      background: #383838;
+      padding: 10px;
+      color: #ffffff;
+      text-transform: uppercase;
+      font-size: 14px;
+      transition: all 0.3s ease-in-out;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+
+      &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 0;
+        -webkit-transition: all 0.3s ease-in-out;
+        -moz-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+        background: #000;
+        z-index: -1;
+      }
+
+      &.menuActive {
+        padding-left: 15px;
+        background: #000;
+      }
+
+      &:hover {
+        padding-left: 15px;
+        &:before {
+          width: 100%;
+        }
+      }
+    }
+  }
+  
+  /* ==========================================================
+  ! 08. Home
+  ========================================================== */
+  .section-home {
+    z-index: 88;
+    opacity: 1;
+    overflow-y: auto;
+
+    #profile {
+      width: 100%;
+      max-width: 200px;
+      border-radius: 100%;
+      border: 6px solid #ddd;
+      margin-bottom: 20px;
+    }
+    .profile-title {
+      font-size: 36px;
+      letter-spacing: -1px;;
+      color: #383838;
+    }
+    .profile-subtitle {
+      margin-bottom: 20px;
+    }
+  }
+
+  
+  /* ==========================================================
+  ! Content
+  ========================================================== */
+  .pageTitle {
+    color: #021533;
+    text-transform: uppercase;
+    font-size: 22px;
+    line-height: 26px;
+    font-weight: bold;
+    margin-top: 0;
+    border-bottom: 1px solid #021533;
+    padding-bottom: 10px;
+    margin-bottom: 40px;
+  }
+  .pageItem {
+    padding: 15px;
+    border: 4px double #ccc;
+    margin-bottom: 15px;
+    background-color: #f4f4f4;
+    .itemTitle {
+      font-weight: bold;
+      color: #021533;;
+      font-size: 18px;
+      line-height: 22px;
+      margin: 0px 0px 8px 0px;
+      letter-spacing: -0.5px;  
+    }
+    .itemTime {
+      line-height: 15px;
+      font-style: italic;
+      color: #555;
+      font-size: 10px;
+      margin-top: 5px;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 5px;
+      margin-bottom: 5px;
+    }
+    .description {
+      font-size: 12px;
+    }
+  }

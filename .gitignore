@@ -1,13 +1,3 @@
-_site/
-.sass-cache/
-.jekyll-cache/
-.jekyll-metadata
 node_modules/
-Gemfile.lock
-package-lock.json
-.publish
-assets/css/
-!assets/css/styles.scss
-assets/js/
-!assets/js/main.js
-fonts/
+.cache/
+public
