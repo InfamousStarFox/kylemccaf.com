@@ -24,3 +24,4 @@ To deploy via git worktree:
 npm run build
 ```
 Navigate into the auto-generated folder `public`, and commit the changes
+Note: `public/.git` may need to be temporarily removed for the build to succeed

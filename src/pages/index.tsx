@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Helmet } from "react-helmet";
+import { StaticImage } from "gatsby-plugin-image";
 import profile from 'images/profile.jpg';
 import { useStaticQuery, graphql } from "gatsby";
 import { NavBar } from 'components/NavBar';
@@ -13,7 +14,7 @@ import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 import 'assets/css/index.scss';
 
 
-const IndexPage = () => {
+const IndexPage = ():React.ReactElement => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -45,7 +46,20 @@ const IndexPage = () => {
         <NavBar page={page} setPage={setPage} />
         <div className={`section-vcardbody section-home${page !== 'home' ? ' section-vcardbody-pgactive' : ''}`}>
           <div style={{textAlign:'center'}}>
-            <img id="profile" src={profile} alt="Kyle McCaffery"/>
+            <StaticImage
+              src='../images/profile.jpg'
+              alt="Kyle McCaffery"
+              placeholder="blurred"
+              width={190}
+              height={190}
+              quality={90}
+              style={{
+                overflow: 'hidden',
+                borderRadius: '100%',
+                border: '6px solid #ddd',
+                marginBottom: 20
+              }}
+            />
             <h1 className="profile-title">Kyle <span style={{color: "#557A95"}}>McCaffery</span></h1>
             <h4 className="profile-subtitle">Software Developer | Security Consultant</h4>
             <div className="profile-subtitle">

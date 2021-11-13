@@ -1,3 +1,12 @@
+$image-sizes:(
+    xxl: 4000,
+    xl: 2400,
+    lg: 1200,
+    md: 800,
+    sm: 400,
+    xs: 100
+);
+
 /* ==========================================================
 ! Body
 ========================================================== */
@@ -11,8 +20,16 @@ body {
     -webkit-font-smoothing: subpixel-antialiased;
     background: linear-gradient(-45deg, #2c160b, #241f1b, #31160b);
     background-attachment: fixed;
-    background: url('../../images/bg1.jpg') no-repeat center center fixed #f2f2f2;
+    background-repeat: no-repeat;
+    background-position: center center;
     background-size: cover;
+    @each $name,$size in $image-sizes{
+      @media screen and (max-width: #{$size}px){
+        background-image: url('/../../images/generated/#{$size}/bg.jpg');
+        background-image: url('/../../images/generated/#{$size}/bg.webp');
+      }
+    }
+
   }
   *, ::after, ::before {
     box-sizing: border-box;
@@ -236,14 +253,6 @@ body {
     z-index: 88;
     opacity: 1;
     overflow-y: auto;
-
-    #profile {
-      width: 100%;
-      max-width: 200px;
-      border-radius: 100%;
-      border: 6px solid #ddd;
-      margin-bottom: 20px;
-    }
     .profile-title {
       font-size: 36px;
       letter-spacing: -1px;;
