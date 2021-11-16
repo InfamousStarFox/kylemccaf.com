@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Helmet } from "react-helmet";
 import { StaticImage } from "gatsby-plugin-image";
-import profile from 'images/profile.jpg';
 import { useStaticQuery, graphql } from "gatsby";
 import { NavBar } from 'components/NavBar';
 import { About } from 'components/About';
@@ -9,10 +8,10 @@ import { Experience } from 'components/Experience';
 import { Projects } from 'components/Projects';
 import { Contact } from 'components/Contact';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { config, dom } from "@fortawesome/fontawesome-svg-core";
 import { faFilePdf } from '@fortawesome/free-solid-svg-icons';
 import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 import 'assets/css/index.scss';
-
 
 const IndexPage = ():React.ReactElement => {
   const { site } = useStaticQuery(
@@ -28,18 +27,18 @@ const IndexPage = ():React.ReactElement => {
     `
   );
 
-
   const [page, setPage] = useState('home');
-  console.log(page);
+  config.autoAddCss = false;
 
   return (
     <>
-      <Helmet>
+      <Helmet htmlAttributes={{lang: 'en'}}>
         <meta charSet="utf-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>{site.siteMetadata.title}</title>
         <meta name="description" content={site.siteMetadata.description} />
+        <style>{dom.css()}</style>
       </Helmet>
 
       <div className='container'>
