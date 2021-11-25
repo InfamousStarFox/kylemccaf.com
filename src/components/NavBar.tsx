@@ -1,4 +1,5 @@
 import React from 'react';
+import * as classNames from './Navbar.module.scss';
 
 export function NavBar(props: {
     page: string,
@@ -29,12 +30,16 @@ export function NavBar(props: {
     ];
 
     return (
-        <div className={`main-menu${props.page !== 'home' ? ' main-menu-pgactive' : ''}`}>
-            <ul className="main-menu-list">
+        <div
+            className={classNames.mainMenu}
+            style={{
+                left: props.page !== 'home' ? '0%' : '15%'
+            }}>
+            <ul className={classNames.menuList}>
                 {
                     navigation.map(item => {
                         return (
-                            <li key={item.page}><a onClick={() => props.setPage(item.page)} className={props.page === item.page ? 'menuActive' : ''}>{item.title}</a></li>
+                            <li key={item.page}><a onClick={() => props.setPage(item.page)} className={props.page === item.page ? classNames.menuActive : ''}>{item.title}</a></li>
                         );
                     })
                 }

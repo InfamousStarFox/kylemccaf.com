@@ -68,6 +68,8 @@ body {
   }
   .btn {
       display: inline-block;
+      width: 100%;
+      text-align: center;
       color: #fff;
       background-color: #343a40;
       padding: .375rem .75rem;
@@ -84,13 +86,7 @@ body {
       }
   }
 
-  .btn-block {
-    display: block;
-    width: 100%;
-  }
-
-
-  .section-vcardbody {
+  .sectionVcardbody {
     width: 100%;
     margin: 0 auto;
     overflow-y: scroll;
@@ -134,16 +130,13 @@ body {
     }
   }
   
-  .section-vcardbody-pgactive {
-    left: 15%;
-  }
   @media (min-width:992px) {
-    .section-page {
+    .sectionPage {
       z-index: 11;
       opacity: 0;
     }
   }
-  .section-page-active {
+  .sectionPageActive {
     opacity: 1;
     z-index: 22;
     left: 55%;
@@ -154,9 +147,8 @@ body {
     }
   
   }
-  .section-vcardbody,
-  .section-page-active,
-  .main-menu {
+  .sectionVcardbody,
+  .sectionPageActive {
     @media (min-width: 992px) {
       margin-top: 10px;
       @media (min-height: 650px) {
@@ -174,95 +166,22 @@ body {
     }
   }
 
-  /* ==========================================================
-  ! Main Menu
-  ========================================================== */
-  .main-menu {
-    width: 15%;
-    position: absolute;
-    top: 0;
-    left: 15%;
-    padding-top: 6px;
-    padding-right: 10px;
-    -webkit-transition: all 0.6s ease-in-out;
-    -moz-transition: all 0.6s ease-in-out;
-    transition: all 0.6s ease-in-out;
-    display: none;
-    @media (min-width:992px) {
-      display: block;
-    }
-  }
-  .main-menu-pgactive {
-    left: 0%;
-  }
-  .main-menu-list {
-    margin: 0;
-    padding: 0;
-    li {
-      padding: 0;
-      margin: 0;
-      margin-bottom: 5px;
-      list-style: none;
-    }
-    a {
-      display: block;
-      background: #383838;
-      padding: 10px;
-      color: #ffffff;
-      text-transform: uppercase;
-      font-size: 14px;
-      transition: all 0.3s ease-in-out;
-      position: relative;
-      overflow: hidden;
-      z-index: 1;
 
-      &:before {
-        content: '';
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 0;
-        -webkit-transition: all 0.3s ease-in-out;
-        -moz-transition: all 0.3s ease-in-out;
-        transition: all 0.3s ease-in-out;
-        background: #000;
-        z-index: -1;
-      }
-
-      &.menuActive {
-        padding-left: 15px;
-        background: #000;
-      }
-
-      &:hover {
-        padding-left: 15px;
-        &:before {
-          width: 100%;
-        }
-      }
-    }
-  }
-  
   /* ==========================================================
   ! 08. Home
   ========================================================== */
-  .section-home {
+  .sectionHome {
     z-index: 88;
+    text-align: center;
     opacity: 1;
     overflow-y: auto;
-    .profile-title {
+    .profileTitle {
       font-size: 36px;
-      letter-spacing: -1px;;
+      letter-spacing: -1px;
       color: #383838;
-    }
-    .profile-subtitle {
-      margin-bottom: 20px;
     }
   }
 
-  
   /* ==========================================================
   ! Content
   ========================================================== */
@@ -284,7 +203,7 @@ body {
     background-color: #f4f4f4;
     .itemTitle {
       font-weight: bold;
-      color: #021533;;
+      color: #021533;
       font-size: 18px;
       line-height: 22px;
       margin: 0px 0px 8px 0px;

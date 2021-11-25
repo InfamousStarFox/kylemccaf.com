@@ -11,9 +11,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { config, dom } from "@fortawesome/fontawesome-svg-core";
 import { faFilePdf } from '@fortawesome/free-solid-svg-icons';
 import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
-import 'assets/css/index.scss';
+import * as classNames from 'assets/css/index.module.scss';
 
-const IndexPage = ():React.ReactElement => {
+const IndexPage = (): React.ReactElement => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -32,7 +32,7 @@ const IndexPage = ():React.ReactElement => {
 
   return (
     <>
-      <Helmet htmlAttributes={{lang: 'en'}}>
+      <Helmet htmlAttributes={{ lang: 'en' }}>
         <meta charSet="utf-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -41,39 +41,42 @@ const IndexPage = ():React.ReactElement => {
         <style>{dom.css()}</style>
       </Helmet>
 
-      <div className='container'>
+      <div className={classNames.container}>
         <NavBar page={page} setPage={setPage} />
-        <div className={`section-vcardbody section-home${page !== 'home' ? ' section-vcardbody-pgactive' : ''}`}>
-          <div style={{textAlign:'center'}}>
-            <StaticImage
-              src='../images/profile.jpg'
-              alt="Kyle McCaffery"
-              placeholder="blurred"
-              width={190}
-              height={190}
-              quality={90}
-              style={{
-                overflow: 'hidden',
-                borderRadius: '100%',
-                border: '6px solid #ddd',
-                marginBottom: 20
-              }}
-            />
-            <h1 className="profile-title">Kyle <span style={{color: "#557A95"}}>McCaffery</span></h1>
-            <h4 className="profile-subtitle">Software Developer | Security Consultant</h4>
-            <div className="profile-subtitle">
-              <p>Software Developer in Seattle WA.</p>
-              <p>React, TypeScript, GraphQL, & more.</p>
-            </div>
-            <a href="/Kyle McCaffery Resume.pdf" target="_blank" className="btn btn-dark btn-block"><FontAwesomeIcon icon={faFilePdf} />&nbsp; Download my Resume</a>
-            <a href="https://www.linkedin.com/in/kylemccaf/" target="_blank" className="btn btn-dark btn-block"><FontAwesomeIcon icon={faLinkedinIn} />&nbsp; Connect on LinkedIn</a>
+        <div
+          className={`${classNames.sectionVcardbody} ${classNames.sectionHome}`}
+          style={{
+            left: page !== 'home' ? '15%' : '30%'
+          }}
+        >
+          <StaticImage
+            src='../images/profile.jpg'
+            alt="Kyle McCaffery"
+            placeholder="blurred"
+            width={190}
+            height={190}
+            quality={90}
+            style={{
+              overflow: 'hidden',
+              borderRadius: '100%',
+              border: '6px solid #ddd',
+              marginBottom: 20
+            }}
+          />
+          <h1 className={classNames.profileTitle}>Kyle <span style={{ color: "#557A95" }}>McCaffery</span></h1>
+          <div style={{ marginBottom: 20 }}>
+            <h4 style={{ marginBottom: 20 }}>Software Developer | Security Consultant</h4>
+            <p>Software Developer in Seattle WA.</p>
+            <p>React, TypeScript, GraphQL, & more.</p>
           </div>
+          <a href="/Kyle McCaffery Resume.pdf" target="_blank" className={classNames.btn}><FontAwesomeIcon icon={faFilePdf} />&nbsp; Download my Resume</a>
+          <a href="https://www.linkedin.com/in/kylemccaf/" target="_blank" className={classNames.btn}><FontAwesomeIcon icon={faLinkedinIn} />&nbsp; Connect on LinkedIn</a>
         </div>
 
-        <About active={page === 'about'}/>
-        <Experience active={page === 'experience'}/>
-        <Projects active={page === 'projects'}/>
-        <Contact active={page === 'contact'}/>
+        <About active={page === 'about'} />
+        <Experience active={page === 'experience'} />
+        <Projects active={page === 'projects'} />
+        <Contact active={page === 'contact'} />
       </div>
     </>
   )

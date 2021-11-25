@@ -1,20 +1,18 @@
 import React from "react";
 import { navigate } from 'gatsby';
-import 'assets/css/index.scss';
+import * as classNames from 'assets/css/index.module.scss';
 
-export default function NotFoundPage():React.ReactElement {
+export default function NotFoundPage(): React.ReactElement {
   return (
-    <div className='container'>
-      <div className={`section-vcardbody section-home`}>
-        <div style={{textAlign:'center'}}>
-          <h1 className="profile-title">Error <span style={{color: "#557A95"}}>404</span></h1>
-          <h4 className="profile-subtitle">Page not found</h4>
-          <div className="profile-subtitle">
-            <p>The requested page could not be found.</p>
-          </div>
-          <a onClick={() => navigate('/')} className="btn btn-dark btn-block">Return Home</a>
+    <div className={classNames.container}>
+      <div className={`${classNames.sectionVcardbody} ${classNames.sectionHome}`}>
+        <h1 className={classNames.profileTitle}>Error <span style={{ color: "#557A95" }}>404</span></h1>
+        <div style={{ marginBottom: 20 }}>
+          <h4 style={{ marginBottom: 20 }}>Page not found</h4>
+          <p>The requested page could not be found.</p>
         </div>
+        <a onClick={() => navigate('/')} className={classNames.btn}>Return Home</a>
       </div>
     </div>
-  )
+  );
 }
