@@ -1,6 +1,7 @@
 import React from "react";
 import { navigate } from 'gatsby';
 import * as classNames from 'assets/css/index.module.scss';
+import { Button } from "components/parts/Button";
 
 export default function NotFoundPage(): React.ReactElement {
   return (
@@ -11,7 +12,10 @@ export default function NotFoundPage(): React.ReactElement {
           <h4 style={{ marginBottom: 20 }}>Page not found</h4>
           <p>The requested page could not be found.</p>
         </div>
-        <a onClick={() => navigate('/')} className={classNames.btn}>Return Home</a>
+        <Button
+          onClick={() => navigate('/')}
+          content='Return Home'
+        />
       </div>
     </div>
   );

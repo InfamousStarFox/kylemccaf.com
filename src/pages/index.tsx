@@ -12,8 +12,9 @@ import { config, dom } from "@fortawesome/fontawesome-svg-core";
 import { faFilePdf } from '@fortawesome/free-solid-svg-icons';
 import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 import * as classNames from 'assets/css/index.module.scss';
+import { Button } from 'components/parts/Button';
 
-const IndexPage = (): React.ReactElement => {
+export default function IndexPage(): React.ReactElement {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -67,10 +68,18 @@ const IndexPage = (): React.ReactElement => {
           <div style={{ marginBottom: 20 }}>
             <h4 style={{ marginBottom: 20 }}>Software Developer | Security Consultant</h4>
             <p>Software Developer in Seattle WA.</p>
-            <p>React, TypeScript, GraphQL, & more.</p>
+            <p>React, TypeScript, GraphQL, &amp; more.</p>
           </div>
-          <a href="/Kyle McCaffery Resume.pdf" target="_blank" className={classNames.btn}><FontAwesomeIcon icon={faFilePdf} />&nbsp; Download my Resume</a>
-          <a href="https://www.linkedin.com/in/kylemccaf/" target="_blank" className={classNames.btn}><FontAwesomeIcon icon={faLinkedinIn} />&nbsp; Connect on LinkedIn</a>
+          <Button
+            content={<><FontAwesomeIcon icon={faFilePdf} />&nbsp; Download my Resume</>}
+            href="/Kyle McCaffery Resume.pdf"
+            target="_blank"
+          />
+          <Button
+            content={<><FontAwesomeIcon icon={faLinkedinIn} />&nbsp; Connect on LinkedIn</>}
+            href="https://www.linkedin.com/in/kylemccaf/"
+            target="_blank"
+          />
         </div>
 
         <About active={page === 'about'} />
@@ -81,5 +90,3 @@ const IndexPage = (): React.ReactElement => {
     </>
   )
 }
-
-export default IndexPage
