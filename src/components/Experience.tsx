@@ -17,9 +17,19 @@ export function Experience(props: {
             title="Work Experience"
             content={<>
                 <CardItem
+                    title={'Liberty Mutual'}
+                    time={<>
+                        Software Development Engineer<br />2022 - Present
+                    </>}
+                    description={<>
+                        <p>Front-end software developer; React, TypeScript, and GraphQL. Interface design and construction for agents across the world to interact with customer data.</p>
+                    </>}
+                />
+
+                <CardItem
                     title={'Doosan GridTech'}
                     time={<>
-                        Software Development Engineer<br />2019 - Present
+                        Software Development Engineer<br />2019 - 2022
                     </>}
                     description={<>
                         <p>Full stack engineer, building a React Native application to control a Distributed Energy Resource Optimizer (DERO) system using TypeScript, GraphQL, and PWA technologies.</p>
