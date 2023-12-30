@@ -19,7 +19,7 @@ export function Experience(props: {
                 <CardItem
                     title={'Liberty Mutual'}
                     time={<>
-                        Senrior Software Engineer<br />2022 - Present
+                        Senior Software Engineer<br />2022 - Present
                     </>}
                     description={<>
                         <p>Full stack, senior developer; React, TypeScript, and GraphQL. Interface design and construction for agents across the world to interact with customer data.</p>
