@@ -49,7 +49,7 @@ export function Projects(props: {
                     time={<>1st Place Wining Team<br />October 2017</>}
                     description={<>
                         <p>Led a team of four to develop a program in C which reduced the amount of https packets and bandwidth necessary to serve websites via localized caching.</p>
-                        <p><a href="https://devpost.com/software/project-a-l-l-a-n-6ftjzl" target="_blank">More Info</a></p>
+                        <p><a href="https://devpost.com/software/project-a-l-l-a-n-6ftjzl" target="_blank" title="Link to blog post with more info">Learn more at DevPost</a></p>
                     </>}
                 />
             </>}

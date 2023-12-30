@@ -39,7 +39,17 @@ export function NavBar(props: {
                 {
                     navigation.map(item => {
                         return (
-                            <li key={item.page}><a onClick={() => props.setPage(item.page)} className={props.page === item.page ? classNames.menuActive : ''}>{item.title}</a></li>
+                            <li key={item.page}>
+                                <a
+                                    onClick={() => props.setPage(item.page)}
+                                    className={props.page === item.page ? classNames.menuActive : ''}
+                                    role='button'
+                                    tabIndex={0}
+                                    title={item.title}
+                                >
+                                    {item.title}
+                                </a>
+                            </li>
                         );
                     })
                 }

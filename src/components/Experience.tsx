@@ -19,10 +19,10 @@ export function Experience(props: {
                 <CardItem
                     title={'Liberty Mutual'}
                     time={<>
-                        Software Development Engineer<br />2022 - Present
+                        Senrior Software Engineer<br />2022 - Present
                     </>}
                     description={<>
-                        <p>Front-end software developer; React, TypeScript, and GraphQL. Interface design and construction for agents across the world to interact with customer data.</p>
+                        <p>Full stack, senior developer; React, TypeScript, and GraphQL. Interface design and construction for agents across the world to interact with customer data.</p>
                     </>}
                 />
 
@@ -111,8 +111,8 @@ export function Experience(props: {
                     />
                 </>}
                 <Button
-                    content={<>Show {showMore ? 'Less' : 'More'}</>}
                     onClick={() => setShowMore(!showMore)}
+                    children={<>Show {showMore ? 'Less' : 'More'}</>}
                 />
             </>}
         />

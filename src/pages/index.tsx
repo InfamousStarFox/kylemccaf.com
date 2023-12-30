@@ -66,17 +66,17 @@ export default function IndexPage(): React.ReactElement {
           />
           <h1 className={classNames.profileTitle}>Kyle <span style={{ color: "#557A95" }}>McCaffery</span></h1>
           <div style={{ marginBottom: 20 }}>
-            <h4 style={{ marginBottom: 20 }}>Software Developer | Security Consultant</h4>
-            <p>Software Developer in Seattle WA.</p>
+            <h2 style={{ marginBottom: 20, fontSize: '1rem' }}>Senior Software Developer</h2>
+            <p>Senior Software Developer in Seattle WA.</p>
             <p>React, TypeScript, GraphQL, &amp; more.</p>
           </div>
           <Button
-            content={<><FontAwesomeIcon icon={faFilePdf} />&nbsp; Download my Resume</>}
+            children={<><FontAwesomeIcon icon={faFilePdf} />&nbsp; Download my Resume</>}
             href="/Kyle McCaffery Resume.pdf"
             target="_blank"
           />
           <Button
-            content={<><FontAwesomeIcon icon={faLinkedinIn} />&nbsp; Connect on LinkedIn</>}
+            children={<><FontAwesomeIcon icon={faLinkedinIn} />&nbsp; Connect on LinkedIn</>}
             href="https://www.linkedin.com/in/kylemccaf/"
             target="_blank"
           />

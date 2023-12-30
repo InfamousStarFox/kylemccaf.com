@@ -14,7 +14,7 @@ export default function NotFoundPage(): React.ReactElement {
         </div>
         <Button
           onClick={() => navigate('/')}
-          content='Return Home'
+          children='Return Home'
         />
       </div>
     </div>
