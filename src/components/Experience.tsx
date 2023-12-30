@@ -4,6 +4,7 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { Card } from './parts/Card';
 import { CardItem } from './parts/CardItem';
 import { Button } from './parts/Button';
+import { Link } from './parts/Link';
 
 export function Experience(props: {
     active?: boolean
@@ -51,11 +52,11 @@ export function Experience(props: {
                     time='2014 - 2019'
                     description={<>
                         <p>
-                            <a href="http://western.oa-bsa.org/" target="_blank">Western Region, BSA</a><br />
-                            &emsp;<a href="https://github.com/OAWest/wp-theme" target="_blank"><FontAwesomeIcon icon={faGithub} />&nbsp; WordPress Theme</a><br />
-                            <a href="http://whatcomroofing.com/" target="_blank">Whatcom Roofing</a><br />
-                            <a href="http://oa-bsa.org/" target="_blank">Order of the Arrow, BSA</a><br />
-                            <a href="https://jonathanstyle.com/" target="_blank">Jonathan O'Brien Interior Design</a><br />
+                            <Link href="https://western.oa-bsa.org/">Western Region, BSA</Link>
+                            <Link href="https://github.com/OAWest/wp-theme" title="GitHub">&emsp;<FontAwesomeIcon icon={faGithub} /> WordPress Theme</Link>
+                            <Link href="https://whatcomroofing.com/">Whatcom Roofing</Link>
+                            <Link href="https://oa-bsa.org/">Order of the Arrow, BSA</Link>
+                            <Link href="https://jonathanstyle.com/">Jonathan O'Brien Interior Design</Link>
                         </p>
                     </>}
                 />

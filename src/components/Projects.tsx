@@ -5,6 +5,7 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faCompass } from '@fortawesome/free-regular-svg-icons';
 import { Card } from './parts/Card';
 import { CardItem } from './parts/CardItem';
+import { Link } from './parts/Link';
 
 export function Projects(props: {
     active?: boolean
@@ -28,7 +29,7 @@ export function Projects(props: {
                     title={<><FontAwesomeIcon icon={faCompass} />&nbsp; Radio Direction Finding</>}
                     description={<>
                         <p>Using an array of four software defined radio receivers (RTL-SDR), this project calculates the bearing and direction of a signal, then plots it on a map in real time. The code has been featured on several hackaday projects.</p>
-                        <p><a href="https://github.com/InfamousStarFox/kerberossdr" target="_blank"><FontAwesomeIcon icon={faGithub} />&nbsp; GitHub Repository</a></p>
+                        <Link href="https://github.com/InfamousStarFox/kerberossdr"><FontAwesomeIcon icon={faGithub} /> GitHub Repository</Link>
                     </>}
                 />
 
@@ -37,9 +38,7 @@ export function Projects(props: {
                     time={<>1st Place Wining Team<br />November 2017</>}
                     description={<>
                         <p>
-                            Led the development team of four, which built a PHP/MySQL website for students to connect with mentors and collaborate on projects and assignments.<br />
-                            <a href="https://hackoa.com/wwu/" target="_blank">Demo Site</a><br />
-                            <a href="https://mentorq.cs.wwu.edu/" target="_blank">Live Site</a>
+                            Led the development team of four, which built a PHP/MySQL website for students to connect with mentors and collaborate on projects and assignments.
                         </p>
                     </>}
                 />
@@ -49,7 +48,7 @@ export function Projects(props: {
                     time={<>1st Place Wining Team<br />October 2017</>}
                     description={<>
                         <p>Led a team of four to develop a program in C which reduced the amount of https packets and bandwidth necessary to serve websites via localized caching.</p>
-                        <p><a href="https://devpost.com/software/project-a-l-l-a-n-6ftjzl" target="_blank" title="Link to blog post with more info">Learn more at DevPost</a></p>
+                        <Link href="https://devpost.com/software/project-a-l-l-a-n-6ftjzl">Learn more at DevPost</Link>
                     </>}
                 />
             </>}
