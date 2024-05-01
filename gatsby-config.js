@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
     siteUrl: "https://www.kylemccaf.com",
-    title: "Kyle McCaffery, Software Developer and Security Consultant.",
-    description: "Kyle McCaffery, Software Developer and Security Consultant.",
+    title: "Kyle McCaffery, Senior Software Engineer.",
+    description: "Kyle McCaffery, Senior Software Engineer.",
   },
   plugins: [
     "gatsby-plugin-sass",
