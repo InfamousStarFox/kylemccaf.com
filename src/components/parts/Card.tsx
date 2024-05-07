@@ -1,17 +1,18 @@
 import React from 'react';
-import * as classNames from './Card.module.scss';
-import * as indexClassNames from 'assets/css/index.module.scss';
+import * as style from './Card.module.scss';
 
-export function Card(props: {
-    title?: string | React.ReactChild,
-    content?: React.ReactChild,
+export const Card = (props: {
+    title?: React.ReactNode,
+    children?: React.ReactNode,
     active?: boolean,
-}): React.ReactElement {
+}): React.ReactElement => (
+    <div className={`${style.card} ${style.page} ${props.active ? style.active : ''}`}>
+        {props.title ? <h2 className={style.title}>{props.title}</h2> : null}
+        {props.children}
+    </div>
+);
 
-    return (
-        <div className={`${indexClassNames.sectionVcardbody} ${classNames.sectionPage} ${props.active ? classNames.sectionPageActive : ''}`}>
-            <h2 className={classNames.pageTitle}>{props.title}</h2>
-            {props.content}
-        </div>
-    );
-}
+
+export const CardHome = (props: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>): React.ReactElement => (
+    <div className={`${style.card} ${style.home}`} {...props} />
+);

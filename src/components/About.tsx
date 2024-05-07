@@ -12,7 +12,7 @@ export function About(props: {
         <Card
             active={props.active}
             title="About Kyle"
-            content={
+            children={
                 <>
                     <CardItem
                         title={<>

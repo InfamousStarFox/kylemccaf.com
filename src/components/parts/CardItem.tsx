@@ -1,19 +1,14 @@
 import React from 'react';
-import * as classNames from './CardItem.module.scss';
+import * as style from './CardItem.module.scss';
 
-export function CardItem(props: {
-    title?: string | React.ReactChild,
-    time?: string | React.ReactChild,
-    description?: string | React.ReactChild
-}): React.ReactElement {
-
-    const title = props.title ? <h3 className={classNames.itemTitle}>{props.title}</h3> : <></>;
-    const time = props.time ? <h4 className={classNames.itemTime}>{props.time}</h4> : <></>;
-    const description = props.description ? <div className={classNames.itemDescription}>{props.description}</div> : <></>;
-
-    return (
-        <div className={classNames.pageItem}>
-            {title}{time}{description}
-        </div>
-    );
-}
+export const CardItem = (props: {
+    title?: React.ReactNode,
+    time?: React.ReactNode,
+    description?: React.ReactNode
+}): React.ReactElement => (
+    <div className={style.item}>
+        {props.title ? <h3 className={style.title}>{props.title}</h3> : null}
+        {props.time ? <h4 className={style.time}>{props.time}</h4> : null}
+        {props.description ? <div className={style.description}>{props.description}</div> : null}
+    </div>
+);

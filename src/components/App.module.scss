@@ -1,0 +1,98 @@
+$image-sizes: (
+  xxl: 4000,
+  xl: 2400,
+  lg: 1200,
+  md: 800,
+  sm: 400,
+  xs: 100
+);
+
+/* ==========================================================
+! Body
+========================================================== */
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  text-align: left;
+  color: #212529;
+  line-height: 1.5;
+  -webkit-font-smoothing: subpixel-antialiased;
+  background: linear-gradient(-45deg, #2c160b, #241f1b, #31160b);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+
+  @each $name, $size in $image-sizes {
+    @media screen and (max-width: #{$size}px) {
+      background-image: url('/../../images/generated/#{$size}/bg.jpg');
+      background-image: url('/../../images/generated/#{$size}/bg.webp');
+    }
+  }
+}
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+p {
+  margin-bottom: .5rem;
+}
+
+p,
+h1,
+h2,
+h3,
+h4 {
+  margin: 0px;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.container {
+  @media (min-width:576px) {
+    max-width: 450px;
+  }
+
+  @media (min-width:768px) {
+    max-width: 720px;
+  }
+
+  @media (min-width:992px) {
+    min-height: 600px;
+    max-width: 1140px;
+    margin-top: 10px;
+
+    @media (min-height: 650px) {
+      margin-top: 30px;
+    }
+
+    @media (min-height: 750px) {
+      margin-top: 60px;
+    }
+
+    @media (min-height: 992px) {
+      margin-top: 90px;
+    }
+
+    @media (min-height: 1400px) {
+      margin-top: 180px;
+    }
+  }
+
+  width: 100%;
+  position: relative;
+  padding-bottom: 80px;
+  margin: 15px auto;
+  transition: all 0.3s ease-in-out;
+}

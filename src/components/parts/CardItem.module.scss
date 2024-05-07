@@ -1,11 +1,11 @@
-.pageItem {
+.item {
     padding: 15px;
     border: 4px double #ccc;
     margin-bottom: 15px;
     background-color: #f4f4f4;
 }
 
-.itemTitle {
+.title {
     font-weight: bold;
     color: #021533;
     font-size: 18px;
@@ -14,7 +14,7 @@
     letter-spacing: -0.5px;  
 }
 
-.itemTime {
+.time {
     line-height: 15px;
     font-style: italic;
     color: #555;
@@ -25,6 +25,6 @@
     margin-bottom: 5px;
 }
 
-.itemDescription {
+.description {
     font-size: 14px;
 }

@@ -1,10 +1,10 @@
 import React from 'react';
-import * as classNames from './Navbar.module.scss';
+import * as style from './Navbar.module.scss';
 
-export function NavBar(props: {
+export const NavBar = (props: {
     page: string,
     setPage: React.Dispatch<React.SetStateAction<string>>
-}): React.ReactElement {
+}): React.ReactElement => {
 
     const navigation = [
         {
@@ -31,18 +31,18 @@ export function NavBar(props: {
 
     return (
         <div
-            className={classNames.mainMenu}
+            className={style.nav}
             style={{
                 left: props.page !== 'home' ? '0%' : '15%'
             }}>
-            <ul className={classNames.menuList}>
+            <ul className={style.list}>
                 {
                     navigation.map(item => {
                         return (
                             <li key={item.page}>
                                 <a
                                     onClick={() => props.setPage(item.page)}
-                                    className={props.page === item.page ? classNames.menuActive : ''}
+                                    className={props.page === item.page ? style.active : ''}
                                     role='button'
                                     tabIndex={0}
                                     title={item.title}

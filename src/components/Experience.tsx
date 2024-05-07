@@ -6,9 +6,9 @@ import { CardItem } from './parts/CardItem';
 import { Button } from './parts/Button';
 import { Link } from './parts/Link';
 
-export function Experience(props: {
+export const Experience = (props: {
     active?: boolean
-}): React.ReactElement {
+}): React.ReactElement => {
 
     const [showMore, setShowMore] = useState(false);
 
@@ -16,7 +16,7 @@ export function Experience(props: {
         <Card
             active={props.active}
             title="Work Experience"
-            content={<>
+            children={<>
                 <CardItem
                     title={'Liberty Mutual'}
                     time={<>
@@ -26,7 +26,6 @@ export function Experience(props: {
                         <p>Full stack, senior developer; React, TypeScript, and GraphQL. Interface design and construction for agents across the world to interact with customer data.</p>
                     </>}
                 />
-
                 <CardItem
                     title={'Doosan GridTech'}
                     time={<>
@@ -36,7 +35,6 @@ export function Experience(props: {
                         <p>Full stack engineer, building a React Native application to control a Distributed Energy Resource Optimizer (DERO) system using TypeScript, GraphQL, and PWA technologies.</p>
                     </>}
                 />
-
                 <CardItem
                     title={'Western Region, BSA'}
                     time={<>
@@ -46,7 +44,6 @@ export function Experience(props: {
                         <p>Led a team of 10 to build and maintain a MySQL database program using PHP, JSON, and AJAX. Used Slack, JIRA, Git, and Zoom to coordinate team members and maintain project timeline.</p>
                     </>}
                 />
-
                 <CardItem
                     title={'Freelance Web Design Design'}
                     time='2014 - 2019'
@@ -70,7 +67,6 @@ export function Experience(props: {
                             <p>The lead technology assistant for this local Bellingham company. Duties include social media & brand management, website maintenance, SEO, and advertising.</p>
                         </>}
                     />
-
                     <CardItem
                         title="Section W-1N"
                         time='April 2015 - Sep 2017'
@@ -78,7 +74,6 @@ export function Experience(props: {
                             <p>Chief of this local non-profit organization which focuses on community service. Duties included organizing yearly training events in Alaska and Washington with 200-500 participants, leading quartly board meetings, and managing both the external and internal communications.</p>
                         </>}
                     />
-
                     <CardItem
                         title="Childcare Worldwide"
                         time='Summer 2016'
@@ -86,7 +81,6 @@ export function Experience(props: {
                             <p>Telemarketer for the Ugandan Kids Choir. Duties involved calling organizations, filing paperwork, and attending meetings</p>
                         </>}
                     />
-
                     <CardItem
                         title="Zodiac Aerospace"
                         time='Summer 2015'
@@ -94,7 +88,6 @@ export function Experience(props: {
                             <p>Inventory control and database management for the finished goods warehouse and shipping department.</p>
                         </>}
                     />
-
                     <CardItem
                         title="Salvation Army"
                         time='Summer 2014'
@@ -102,7 +95,6 @@ export function Experience(props: {
                             <p>Served as a cabin counselor, where I created fun and engaging ways to keep energetic youth entertained.</p>
                         </>}
                     />
-
                     <CardItem
                         title="Fire Mountain Scout Camp"
                         time='Summer 2011-2013'
@@ -117,6 +109,5 @@ export function Experience(props: {
                 />
             </>}
         />
-
     );
 }
